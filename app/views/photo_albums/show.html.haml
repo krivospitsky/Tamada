@@ -1,0 +1,10 @@
+%p#notice= notice
+
+%h2
+  = @photo_album.name
+%p
+  = raw @photo_album.description
+
+-@photo_album.photos.all.each do |photo|
+  .col-lg-3
+    =link_to image_tag(photo.photo.url(:thumb), class: 'img-rounded img-list'), photo.photo.url, class: 'fancybox', rel: 'group'

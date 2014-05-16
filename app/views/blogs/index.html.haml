@@ -1,0 +1,10 @@
+%h2 Записки тамады
+
+- @blogs.each do |blog|
+  .row
+    .col-lg-1.col-lg-offset-1
+      =blog.created_at.strftime("%d.%m.%Y")
+    .col-lg-8
+      .well
+        %h3= blog.title
+        = raw blog.text
