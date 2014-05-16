@@ -5,8 +5,10 @@ ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+group :development, :test do
+	gem 'sqlite3'
+	gem 'seed_dump'
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -47,7 +49,10 @@ end
 # gem 'debugger', group: [:development, :test]
 gem 'twitter-bootstrap-rails', :git => 'https://github.com/seyhunak/twitter-bootstrap-rails/', :branch => 'bootstrap3'
 gem "haml-rails"
-gem 'pg'
+
+group :production do
+	gem 'pg'
+end
 
 gem 'activeadmin', github: 'gregbell/active_admin'	
 
@@ -56,7 +61,6 @@ gem 'rich', :github => 'bastiaanterhorst/rich'
 gem 'mini_magick'
 gem 'carrierwave'
 gem "paperclip"
-gem 'seed_dump'
 
 gem 'fancybox2-rails'
 
